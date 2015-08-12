@@ -38,4 +38,12 @@ describe(CD) do
     end
   end
 
+  describe('.search') do
+    it('searches for specific album in array and returns album_name') do
+      @test_album.save()
+      expect(CD.search(@test_album.id())).to(eq(@test_album))
+    end
+  end
+
+
 end

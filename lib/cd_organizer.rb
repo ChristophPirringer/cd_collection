@@ -32,4 +32,14 @@ class CD
     @@organizer.push(self)
   end
 
+  define_singleton_method(:search) do |album_id|
+    found_album = nil
+    @@organizer.each() do |album|
+      if album.id() == album_id.to_i()
+        found_album = album
+      end
+    end
+    found_album
+  end
+
 end
