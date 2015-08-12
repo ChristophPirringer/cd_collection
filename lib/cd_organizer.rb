@@ -19,4 +19,12 @@ class CD
     @@organizer = []
   end
 
+  define_singleton_method(:all) do
+    @@organizer
+  end
+
+  def save
+    @@organizer.push(self)
+  end
+
 end
