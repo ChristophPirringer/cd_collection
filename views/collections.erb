@@ -1,0 +1,7 @@
+<h2>A List of Your Current Collections:</h2>
+
+<ul>
+  <% @collections.each() do |collection| %>
+    <li><a href="/collections/<%= collection.collection_id() %>"><%= collection.collection_name() %> </a></li>
+  <% end %>
+</ul>

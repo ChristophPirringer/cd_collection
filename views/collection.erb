@@ -1,0 +1,9 @@
+<h2>Here are the albums you currently have in </h2>
+
+<ul> <% @collection.albums().each() do |album| %>
+  <li><a href="/albums/<%=album.id() %>"> <%= album.album_name() %> <% album.artist() %> </a></li>
+  <% end %>
+</ul>
+
+<a href="/collections/<%= @collection.collection_id() %>/albums/new">Add a new album</a>
+<a href="/">Return to Main Page</a>
