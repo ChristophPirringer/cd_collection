@@ -11,6 +11,10 @@ class CD
     @album_name
   end
 
+  def artist
+    @artist
+  end
+
   define_singleton_method(:clear) do
     @@organizer = []
   end

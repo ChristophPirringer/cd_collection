@@ -14,4 +14,11 @@ describe(CD) do
     end
   end
 
+  describe('#artist')do
+  it('process user input and returns artist') do
+    test_album = CD.new("Ryan's best ballads", "Ryan")
+    expect(test_album.artist()).to(eq("Ryan"))
+  end
+end
+
 end
