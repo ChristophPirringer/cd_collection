@@ -1,5 +1,6 @@
 require('rspec')
 require('cd_organizer')
+require('collection')
 
 describe(CD) do
 
@@ -44,6 +45,40 @@ describe(CD) do
       expect(CD.search(@test_album.id())).to(eq(@test_album))
     end
   end
+end
+
+
+
+
+
+describe(Collection) do
+
+  before() do
+    Collection.clear()
+    @test_collection = Collection.new("My collection")
+  end
+
+  describe('#collection_name') do
+    it('returns the name of the collection') do
+      expect(@test_collection.collection_name()).to(eq("My collection"))
+    end
+  end
+
+  describe('#collection_save') do
+    it('saves collection to array') do
+      @test_collection.collection_save()
+      expect(Collection.all()).to(eq([@test_collection]))
+    end
+  end
+
+  describe("collection_id") do
+    it("returns the id of the collection") do
+      @test_collection.collection_save()
+      expect(@test_collection.collection_id()).to(eq(1))
+    end
+  end
+
+
 
 
 end
