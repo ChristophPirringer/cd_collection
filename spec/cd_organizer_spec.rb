@@ -54,7 +54,7 @@ end
 describe(Collection) do
 
   before() do
-    Collection.clear()
+    Collection.clear_collection()
     @test_collection = Collection.new("My collection")
   end
 
@@ -67,7 +67,7 @@ describe(Collection) do
   describe('#collection_save') do
     it('saves collection to array') do
       @test_collection.collection_save()
-      expect(Collection.all()).to(eq([@test_collection]))
+      expect(Collection.all_collection()).to(eq([@test_collection]))
     end
   end
 
