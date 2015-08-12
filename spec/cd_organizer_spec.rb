@@ -71,13 +71,26 @@ describe(Collection) do
     end
   end
 
-  describe("collection_id") do
+  describe("#collection_id") do
     it("returns the id of the collection") do
       @test_collection.collection_save()
       expect(@test_collection.collection_id()).to(eq(1))
     end
   end
 
+  describe('#albums') do
+    it('returns empty array of cds for the collection') do
+      expect(@test_collection.albums()).to(eq([]))
+    end
+  end
+
+  describe("#add_albums") do
+    it("adds the user input into the array of albums in the collection") do
+      @test_album = CD.new("Ryan's best ballads", "Ryan")
+      @test_collection.add_albums(@test_album)
+      expect(@test_collection.albums()).to(eq([@test_album]))
+    end
+  end
 
 
 
