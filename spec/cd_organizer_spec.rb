@@ -92,6 +92,13 @@ describe(Collection) do
     end
   end
 
+  describe('.collection_find') do
+    it('finds the collection by id number') do
+      @test_collection.collection_save()
+      @test_collection2 = Collection.new("Christoph down and dirty").collection_save()
+      expect(Collection.collection_find(@test_collection.collection_id())).to(eq(@test_collection))
+    end
+  end
 
 
 end
