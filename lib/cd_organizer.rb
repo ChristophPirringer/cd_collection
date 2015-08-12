@@ -5,6 +5,11 @@ class CD
   def initialize(album_name, artist)
     @album_name = album_name
     @artist = artist
+    @id = @@organizer.length().+(1)
+  end
+
+  def id
+    @id
   end
 
   def album_name
